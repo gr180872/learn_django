@@ -16,6 +16,7 @@ class Post(models.Model):
             blank=True, null=True)
     modified_date=models.DateTimeField(
     	default=timezone.now)
+    keywords = models.TextField(null=True)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -24,6 +25,12 @@ class Post(models.Model):
     def modify(self):
     	self.modified_date = timezone.now()
     	self.save()
+
+    def keyword_list(self):
+        if self.keywords is not None:
+            return self.keywords.split(",")
+        else:
+            return;
 
     def __str__(self):
         return self.title

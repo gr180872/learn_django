@@ -14,12 +14,30 @@
     margin-left: 40px;
 }
 
-h1, h2, h3, h4 {
+h1, h2 {
     font-family: 'Lobster', cursive;
+    color: #333333;
+}
+
+h3, h4 {
+	font-family: 'Times New Roman', cursive;
 }
 
 .date {
     color: #828282;
+}
+
+.keyword_list ul li {
+    display: inline;
+    padding: 5px;
+}
+
+.keyword {
+    background: #eeeeff;
+}
+
+.keyword:hover {
+    background: #ddddee;
 }
 
 .save {

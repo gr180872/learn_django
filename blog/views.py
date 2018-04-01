@@ -45,3 +45,7 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+def keyword_post_list(request, key):
+    posts = Post.objects.filter(keywords__contains=key).order_by('published_date')
+    return render(request, 'blog/keyword_post_list.html', {'posts': posts})

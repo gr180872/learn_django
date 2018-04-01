@@ -16,5 +16,13 @@
 			</small>
 		</h1>
         <p>{{ post.text|linebreaksbr }}</p>
+        <div class="keyword_list"><ul>
+        {% for word in post.keyword_list %}
+            {% if word != '' %}
+                <li class="keyword"><a href="{% url 'keyword_post_list' key=word %}">{{ word }}</a></li>&nbsp;
+            {% endif %}
+        {% endfor %}
+        </ul></div>
+
     </div>
 {% endblock %}
